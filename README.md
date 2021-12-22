@@ -12,3 +12,6 @@ Select DigTaskApplication.java file then run it as a Java Application. There are
 * /user/id: gets a user by its id.
 
 ### How to run the test?
+* For Home tests, run /digtask/src/test/java/com/abufara/digtask/HomeTests.java as JUnit Test.
+* For Bill tests, run /digtask/src/test/java/com/abufara/digtask/BillTests.java as JUnit Test.
+* For User tests, run /digtask/src/test/java/com/abufara/digtask/UserTests.java as JUnit Test.
