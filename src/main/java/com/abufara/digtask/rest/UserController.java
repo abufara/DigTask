@@ -12,12 +12,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.abufara.models.User;
 import com.abufara.services.UserService;
 
+/**
+ * 
+ * The controller of User service
+ * 
+ * @author PC
+ *
+ */
 @RestController
 public class UserController {
 
+	// UserService instance
 	@Autowired
 	UserService userService;
 
+	/*
+	 * Mapping of the get request for all users
+	 * 
+	 * It returns all users and OK response, otherwise it returns NOT_FOUND response
+	 */
 	@GetMapping("/users")
 	public ResponseEntity<List<User>> getAllUsers() {
 
@@ -31,6 +44,12 @@ public class UserController {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 
+	/*
+	 * Mapping of the get request for a specified user
+	 * 
+	 * It returns the specified user and OK response, otherwise it returns NOT_FOUND
+	 * response
+	 */
 	@GetMapping("/user/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable("id") int userId) {
 

@@ -12,12 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 import com.abufara.models.Bill;
 import com.abufara.services.BillService;
 
+/**
+ * 
+ * The controller of Bill service
+ * 
+ * @author PC
+ *
+ */
+
 @RestController
 public class BillController {
 
+	// BillService instance
 	@Autowired
 	BillService billService;
 
+	/*
+	 * Mapping of the get request for all bills before the discount
+	 * 
+	 * It returns all bills and OK response, otherwise it returns NOT_FOUND response
+	 */
 	@GetMapping("/bills")
 	public ResponseEntity<List<Bill>> getAllBills() {
 
@@ -31,6 +45,12 @@ public class BillController {
 		return new ResponseEntity<List<Bill>>(bills, HttpStatus.OK);
 	}
 
+	/*
+	 * Mapping of the get request for all bills after the discount
+	 * 
+	 * It returns all bills after discount and OK response, otherwise it returns
+	 * NOT_FOUND response
+	 */
 	@GetMapping("/billsAfterDiscount")
 	public ResponseEntity<List<Bill>> getAllBillsAfterDiscount() {
 
@@ -44,6 +64,12 @@ public class BillController {
 		return new ResponseEntity<List<Bill>>(bills, HttpStatus.OK);
 	}
 
+	/*
+	 * Mapping of the get request for a specified bill
+	 * 
+	 * It returns the specified bill and OK response, otherwise it returns NOT_FOUND
+	 * response
+	 */
 	@GetMapping("/bill/{id}")
 	public ResponseEntity<Bill> getBillById(@PathVariable("id") int billId) {
 
@@ -57,6 +83,12 @@ public class BillController {
 		return new ResponseEntity<Bill>(bill, HttpStatus.OK);
 	}
 
+	/*
+	 * Mapping of the get request for a specified bill after the discount
+	 * 
+	 * It returns the specified bill after the discount and OK response, otherwise
+	 * it returns NOT_FOUND response
+	 */
 	@GetMapping("/billAfterDiscount/{id}")
 	public ResponseEntity<Bill> getBillByIdAfterDiscount(@PathVariable("id") int billId) {
 

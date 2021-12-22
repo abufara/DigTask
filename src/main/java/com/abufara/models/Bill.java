@@ -2,15 +2,31 @@ package com.abufara.models;
 
 import java.time.LocalDateTime;
 
+/**
+ * 
+ * Bill model
+ * 
+ * Attributes:
+ * 1- billId, int
+ * 2- user, User
+ * 3- amount, double
+ * 4- billDateTime, LocalDateTime
+ * 
+ * @author PC
+ *
+ */
 public class Bill {
 
+	// billId counter
 	private static int id = 1;
 
+	// Attributes
 	int billId;
 	private User user;
 	private double amount;
 	private LocalDateTime billDateTime;
 
+	// Constructors
 	public Bill(User user, double amount, LocalDateTime billDateTime) {
 
 		this.billId = id++;
@@ -27,6 +43,7 @@ public class Bill {
 		this.billDateTime = bill.getBillDateTime();
 	}
 
+	// Setters and Getters
 	public int getBillId() {
 		return billId;
 	}
